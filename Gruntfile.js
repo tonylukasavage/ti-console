@@ -6,7 +6,7 @@ module.exports = function(grunt) {
       options: {
         jshintrc: true
       },
-      src: ['**/ti-console.js']
+      src: ['src/ti-console.js', 'test/**/*.js']
     },
     browserify: {
       build: {
