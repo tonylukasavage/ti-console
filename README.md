@@ -1,3 +1,5 @@
+> **NOT YET FUNCTIONAL**
+
 # ti-console
 
 node.js-style `console` for Titanium. It can serve as a drop-in replacement for node.js `console` for use with [browserify][].
