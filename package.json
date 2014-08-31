@@ -2,7 +2,7 @@
   "name": "ti-console",
   "version": "0.0.0",
   "description": "node.js-style console for Titanium",
-  "keywords": [],
+  "keywords": ["titanium","appcelerator","console"],
   "author": "Tony Lukasavage <anthony.lukasavage@gmail.com>",
   "repository": "git://github.com/tonylukasavage/ti-console.git",
   "main": "./ti-console.js",
@@ -18,5 +18,10 @@
   "dependencies": {
     "date-now": "^0.1.4"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-titanium": "^0.2.0"
+  }
 }
