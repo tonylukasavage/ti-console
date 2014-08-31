@@ -2,7 +2,7 @@
 
 node.js-style `console` for Titanium. It can serve as a drop-in replacement for node.js `console` for use with [browserify][].
 
-> This is a port of Raynos's [console-browserify][].
+This is a port of Raynos's [console-browserify][].
 
 ## install
 
