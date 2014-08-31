@@ -1,15 +1,14 @@
-var console = require('ti-console'),
-	should = require('should');
+var console = require('ti-console');
 require('ti-mocha');
 
 describe('ti-console', function() {
 
 	it('works', function() {
-		1.should.equal(1);
+		'foo'.should.equal('foo');
 	});
 
 });
 
-var runner = mocha.run(function() {
+mocha.run(function() {
 	console.log('[TESTS COMPLETE]');
 });
