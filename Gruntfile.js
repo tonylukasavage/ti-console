@@ -6,7 +6,7 @@ module.exports = function(grunt) {
       options: {
         jshintrc: true
       },
-      src: ['index.js', 'ti-console.js']
+      src: ['**/ti-console.js']
     },
     ti_run: {
       app: {
