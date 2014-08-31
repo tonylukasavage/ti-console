@@ -16,7 +16,12 @@ module.exports = function(grunt) {
       }
     },
     ti_run: {
-      all: {
+      options: {
+        build: {
+          iosVersion: '7.1'
+        }
+      },
+      app: {
         files: {
           'tmp/app/Resources': ['ti-console.js', 'test/app.js',
             'node_modules/should/should.js', 'node_modules/ti-mocha/ti-mocha.js']
