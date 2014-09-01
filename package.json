@@ -1,6 +1,6 @@
 {
   "name": "ti-console",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "node.js-style console for Titanium",
   "keywords": [
     "titanium",
