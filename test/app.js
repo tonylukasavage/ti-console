@@ -19,6 +19,38 @@ describe('ti-console', function() {
 		console.assert.should.be.a.Function;
 	});
 
+	it('invoke console.log', function() {
+		console.log('test-log');
+	});
+
+	it('invoke console.info', function() {
+		console.info('test-info');
+	});
+
+	it('invoke console.warn', function() {
+		console.warn('test-warn');
+	});
+
+	it('invoke console.time', function() {
+		console.time('label');
+	});
+
+	it('invoke console.trace', function() {
+		console.trace('test-trace');
+	});
+
+	it('invoke console.assert', function() {
+		console.assert(true);
+	});
+
+	it('invoke console.dir', function() {
+		console.dir('test-dir');
+	});
+
+	it('invoke console.timeEnd', function() {
+		console.timeEnd('label');
+	});
+
 });
 
 mocha.run(function() {
