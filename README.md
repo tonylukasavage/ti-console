@@ -6,13 +6,22 @@ This is a port of Raynos's [console-browserify][].
 
 ## install
 
-`npm install ti-console`
+```bash
+$ npm install ti-console
+$ cp node_modules/ti-console/ti-console.js /path/to/project/Resources/
+```
 
 ## example
 
 ```js
 var console = require("ti-console");
 console.log("Hello from %s version %s!", Ti.Platform.name, Ti.Platform.version);
+```
+
+You can also override the global `console` built into Titanium by overwriting it with this module in the app.js file.
+
+```js
+console = require('ti-console');
 ```
 
 [browserify]: https://github.com/substack/node-browserify
