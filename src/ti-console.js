@@ -1,4 +1,3 @@
-/*global window, global*/
 var util = require("util");
 var assert = require("assert");
 var now = require("date-now");
