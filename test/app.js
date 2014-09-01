@@ -12,6 +12,7 @@ describe('ti-console', function() {
 		console.log.should.be.a.Function;
 		console.info.should.be.a.Function;
 		console.warn.should.be.a.Function;
+		console.error.should.be.a.Function;
 		console.dir.should.be.a.Function;
 		console.time.should.be.a.Function;
 		console.timeEnd.should.be.a.Function;
@@ -29,6 +30,10 @@ describe('ti-console', function() {
 
 	it('invoke console.warn', function() {
 		console.warn('test-warn');
+	});
+
+	it('invoke console.error', function() {
+		console.error('test-error');
 	});
 
 	it('invoke console.time', function() {
