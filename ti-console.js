@@ -1055,66 +1055,31 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./support/isBuffer":5,"_process":4,"inherits":3}],7:[function(require,module,exports){
-(function (global){
-/*global window, global*/
 var util = require("util");
 var assert = require("assert");
 var now = require("date-now");
 
-var console;
+var _console = {};
 var times = {};
 
-if (typeof global !== "undefined" && global.console) {
-	console = global.console;
-} else if (typeof window !== "undefined" && window.console) {
-	console = window.console;
-} else {
-	console = {};
-}
-
 var functions = [
-	[log, "log"],
-	[info, "info"],
-	[warn, "warn"],
-	[error, "error"],
-	[time, "time"],
-	[timeEnd, "timeEnd"],
-	[trace, "trace"],
-	[dir, "dir"],
-	[consoleAssert, "assert"]
+	['log','info'],
+	['info','info'],
+	['warn','warn'],
+	['error','error']
 ];
 
-for (var i = 0; i < functions.length; i++) {
-	var tuple = functions[i];
-	var f = tuple[0];
-	var name = tuple[1];
+functions.forEach(function(tuple) {
+	_console[tuple[0]] = function() {
+		Ti.API[tuple[1]](util.format.apply(util, arguments));
+	};
+});
 
-	if (!console[name]) {
-		console[name] = f;
-	}
-}
-
-module.exports = console;
-
-function log() {}
-
-function info() {
-	console.log.apply(console, arguments);
-}
-
-function warn() {
-	console.log.apply(console, arguments);
-}
-
-function error() {
-	console.warn.apply(console, arguments);
-}
-
-function time(label) {
+_console.time = function(label) {
 	times[label] = now();
-}
+};
 
-function timeEnd(label) {
+_console.timeEnd = function(label) {
 	var time = times[label];
 	if (!time) {
 		throw new Error("No such label: " + label);
@@ -1122,25 +1087,26 @@ function timeEnd(label) {
 
 	var duration = now() - time;
 	console.log(label + ": " + duration + "ms");
-}
+};
 
-function trace() {
+_console.trace = function() {
 	var err = new Error();
 	err.name = "Trace";
 	err.message = util.format.apply(null, arguments);
 	console.error(err.stack);
-}
+};
 
-function dir(object) {
+_console.dir = function(object) {
 	console.log(util.inspect(object) + "\n");
-}
+};
 
-function consoleAssert(expression) {
+_console.assert = function(expression) {
 	if (!expression) {
 		var arr = Array.prototype.slice.call(arguments, 1);
 		assert.ok(false, util.format.apply(null, arr));
 	}
-}
+};
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+module.exports = _console;
+
 },{"assert":2,"date-now":1,"util":6}]},{},[7])(7);
