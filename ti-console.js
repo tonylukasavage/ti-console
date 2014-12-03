@@ -1086,18 +1086,18 @@ _console.timeEnd = function(label) {
 	}
 
 	var duration = now() - time;
-	console.log(label + ": " + duration + "ms");
+	_console.log(label + ": " + duration + "ms");
 };
 
 _console.trace = function() {
 	var err = new Error();
 	err.name = "Trace";
 	err.message = util.format.apply(null, arguments);
-	console.error(err.stack);
+	_console.error(err.stack);
 };
 
 _console.dir = function(object) {
-	console.log(util.inspect(object) + "\n");
+	_console.log(util.inspect(object) + "\n");
 };
 
 _console.assert = function(expression) {

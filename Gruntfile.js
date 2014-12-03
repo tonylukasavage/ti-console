@@ -18,11 +18,6 @@ module.exports = function(grunt) {
       }
     },
     ti_run: {
-      options: {
-        build: {
-          iosVersion: '7.1'
-        }
-      },
       app: {
         files: {
           'tmp/app/Resources': ['ti-console.js', 'test/app.js',
