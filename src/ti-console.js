@@ -1,5 +1,4 @@
 var util = require("util");
-var assert = require("assert");
 var now = require("date-now");
 
 var _console = {};
@@ -46,7 +45,7 @@ _console.dir = function(object) {
 _console.assert = function(expression) {
 	if (!expression) {
 		var arr = Array.prototype.slice.call(arguments, 1);
-		assert.ok(false, util.format.apply(null, arr));
+		require("assert").ok(false, util.format.apply(null, arr));
 	}
 };
 
